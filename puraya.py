@@ -12,7 +12,9 @@ def fast_copy(source_path, destination_path):
     if os.name == 'posix':
         subprocess.call(['cp', source_path, destination_path])
     elif os.name == 'nt':
-        subprocess.call(['xcopy', source_path, destination_path])
+        # seriously, fuck xcopy
+        (open(destination_path, 'w')).close()
+        subprocess.call(['xcopy', source_path, destination_path, '/Y/Q'], stdout=subprocess.DEVNULL)
     else:
         shutil.copyfile(source_path, destination_path)
 
