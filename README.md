@@ -40,8 +40,12 @@ Puraya copies nested directories from the specified source directories list to t
 
 ## Installation
 
-git clone https://torunar@bitbucket.org/torunar/puraya.git
+```bash
+$ git clone git@github.com:torunar/puraya.git
+```
 
 ## Usage
 
-python puraya sample1 sample2 ...
+```bash
+$ python puraya sample1 sample2 ...
+```
